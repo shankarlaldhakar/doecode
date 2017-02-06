@@ -22,7 +22,7 @@ class NameForm extends React.Component {
     }
 
     autopopulate(event) {
-    	doAjax('GET', "services?action=autopopulate&repo=" + this.props.store.metadata.repository_link,this.parseLoadResponse);
+    	doAjax('GET', "services?action=autopopulate&repo=" + this.props.metadataStore.metadata.repository_link,this.parseLoadResponse);
     	event.preventDefault();
     }
 
@@ -64,4 +64,4 @@ class NameForm extends React.Component {
 }
 
 ReactDOM.render(
-    <NameForm store={metadataStore}/>, document.getElementById('root'));
+    <NameForm metadataStore={metadataStore}/>, document.getElementById('root'));
